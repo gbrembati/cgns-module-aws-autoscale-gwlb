@@ -60,8 +60,8 @@ variable "gateway_instance_type" {
   default = "c5.xlarge"
 }
 module "validate_instance_type" {
-  source = "../modules/common/instance_type"
-
+  source  = "gbrembati/cgns-module-instance-type/aws"
+  version = "1.0.0"
   chkp_type = "gateway"
   instance_type = var.gateway_instance_type
 }
@@ -113,8 +113,8 @@ variable "gateway_version" {
   default = "R81.20-BYOL"
 }
 module "validate_gateway_version" {
-  source = "../modules/common/version_license"
-
+  source  = "gbrembati/cgns-module-version-license/aws"
+  version = "1.0.0"
   chkp_type = "gwlb_gw"
   version_license = var.gateway_version
 }
